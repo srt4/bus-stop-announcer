@@ -1,12 +1,13 @@
 package com.spencerrthomas.stopannouncer;
 
 import java.util.HashMap;
+import java.util.Map;
 
 
-public class StopHelpers {
+public class AnnouncerHelper {
 
 	public static String addressToTTSString(String address) {
-		HashMap<String, String> replaceMap = new HashMap<String, String>();
+		Map<String, String> replaceMap = new HashMap<>();
 		replaceMap.put("NE", "Northeast");
 		replaceMap.put("NW", "Northwest");
 		replaceMap.put("SE", "southeast");
@@ -25,8 +26,9 @@ public class StopHelpers {
 				word = ""; //+ replaceMap.get(word.toUpperCase());
 			}
 			word = word.toLowerCase();
-			returnString.append(word + " ");
+			returnString.append(word).append(" ");
 		}
 		return returnString.toString();
 	}
+
 }
